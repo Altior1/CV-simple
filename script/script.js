@@ -23,13 +23,19 @@ function  accueil(){
 function projets() {
     var balise = document.getElementById("main");
     nettoyage(balise);
-    var NewBalise = document.createElement('h1')
+    var NewBalise = document.createElement('h3')
     NewBalise.id='project';
+    NewBalise.innerHTML = "Mes projets";
+    balise.appendChild(NewBalise);
 }
 
 function contact(){
     var balise = document.getElementById("main");
     nettoyage(balise);
+    var NewBalise = document.createElement('h3')
+    NewBalise.id='projets';
+    NewBalise.innerHTML = "Mes contacts";
+    balise.appendChild(NewBalise);
     github(balise);
     linkedin(balise);
     mail(balise);
