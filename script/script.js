@@ -30,12 +30,8 @@ function projets() {
 }
 
 function contact(){
-    var balise = document.getElementById("main");
+    var balise = document.getElementById("contact");
     nettoyage(balise);
-    var NewBalise = document.createElement('h3')
-    NewBalise.id='projets';
-    NewBalise.innerHTML = "Mes contacts";
-    balise.appendChild(NewBalise);
     github(balise);
     linkedin(balise);
     mail(balise);
@@ -68,7 +64,7 @@ function linkedin(balise){
     NewBalise2.setAttribute('width', '40 px');
     NewBalise.appendChild(NewBalise2);
     var NewBalise3 = document.createElement('a');
-    NewBalise3.setAttribute('href',"www.linkedin.com/in/thomas-rudloft-90b4b4256");
+    NewBalise3.setAttribute('href',"https://www.linkedin.com/in/thomas-rudloft-90b4b4256");
     NewBalise3.innerText="mon Linkedin";
     NewBalise.appendChild(NewBalise3);
     balise.appendChild(NewBalise);
@@ -97,5 +93,4 @@ var spanElement = document.getElementById('accueil');
 spanElement.addEventListener('click',accueil);
 var spanElement = document.getElementById('projet');
 spanElement.addEventListener('click',projets);
-var spanElement = document.getElementById('contact');
-spanElement.addEventListener('click',contact);
+contact();
