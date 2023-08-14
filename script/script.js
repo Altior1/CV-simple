@@ -39,52 +39,43 @@ function contact(){
 
 function github(balise){
     /* affiche le logo et l'adresse de mon GitHub*/
-    var NewBalise = document.createElement('p');
-    var NewBalise2 = document.createElement('img');
-    NewBalise2.src="./ressource/github-icon-for-resume-12.jpg";
-    NewBalise2.alt="L'image du logo GitHub";
-    NewBalise2.setAttribute('size' , '20 px');
-    NewBalise2.setAttribute('width', '40 px');
-    NewBalise.appendChild(NewBalise2);
     var NewBalise3 = document.createElement('a');
     NewBalise3.setAttribute('href',"https://github.com/Altior1");
-    NewBalise3.innerText="mon GitHub";
-    NewBalise.appendChild(NewBalise3);
-    balise.appendChild(NewBalise);
+    var NewBalise2 = document.createElement('img');
+    NewBalise2.src="./ressource/github-icon-for-resume-12.jpg";
+    NewBalise2.alt="Lien vers mon GitHub";
+    NewBalise2.setAttribute('size' , '20 px');
+    NewBalise2.setAttribute('width', '40 px');
+    NewBalise3.appendChild(NewBalise2);
+    balise.appendChild(NewBalise3);
 }
 
 
 function linkedin(balise){
     /* affiche le logo et l'adresse de mon linkedin */
-    var NewBalise = document.createElement('p');
+    var NewBalise3 = document.createElement('a');
+    NewBalise3.setAttribute('href',"https://www.linkedin.com/in/thomas-rudloft-90b4b4256"); 
     var NewBalise2 = document.createElement('img');
     NewBalise2.src="./ressource/linkedin.png";
-    NewBalise2.alt="L'image du logo Linkedin";
+    NewBalise2.alt="Lien vers mon Linkedin";
     NewBalise2.setAttribute('size' , '20 px');
     NewBalise2.setAttribute('width', '40 px');
-    NewBalise.appendChild(NewBalise2);
-    var NewBalise3 = document.createElement('a');
-    NewBalise3.setAttribute('href',"https://www.linkedin.com/in/thomas-rudloft-90b4b4256");
-    NewBalise3.innerText="mon Linkedin";
-    NewBalise.appendChild(NewBalise3);
-    balise.appendChild(NewBalise);
+    NewBalise3.appendChild(NewBalise2);
+    balise.appendChild(NewBalise3);
 }
 
 function mail(balise){
-    var NewBalise = document.createElement('p');
-    var NewBalise2 = document.createElement('img');
-    NewBalise2.src="./ressource/email.png";
-    NewBalise2.alt="L'image du mail";
-    NewBalise2.setAttribute('size' , '20 px');
-    NewBalise2.setAttribute('width', '40 px');
-    NewBalise.appendChild(NewBalise2);
     var NewBalise3 = document.createElement('a');
     var nom = "thomas.rud";
     var domaine = 'mailo.com';
     NewBalise3.setAttribute('href',`mailto:${nom}@${domaine}?Subject=ta%20candidature%20nous%20plait`);
-    NewBalise3.innerText="mon mail : thomas.rud, chez mailo";
-    NewBalise.appendChild(NewBalise3);
-    balise.appendChild(NewBalise);
+    var NewBalise2 = document.createElement('img');
+    NewBalise2.src="./ressource/email.png";
+    NewBalise2.alt="pour m'envoyer un mail";
+    NewBalise2.setAttribute('size' , '20 px');
+    NewBalise2.setAttribute('width', '40 px');
+    NewBalise3.appendChild(NewBalise2);
+    balise.appendChild(NewBalise3);
 }
 
 
@@ -94,3 +85,17 @@ spanElement.addEventListener('click',accueil);
 var spanElement = document.getElementById('projet');
 spanElement.addEventListener('click',projets);
 contact();
+
+/* effet envelloppe */
+const envelope = document.getElementById('envelope');
+const letter = document.getElementById('letter');
+
+envelope.addEventListener('mouseenter', () => {
+    envelope.style.height = '300px'; // Agrandir la lettre
+    letter.style.display = 'block'; // Afficher le texte
+});
+
+envelope.addEventListener('mouseleave', () => {
+    envelope.style.height = '150px'; // Réduire la lettre
+    letter.style.display = 'none'; // Cacher le texte
+});
